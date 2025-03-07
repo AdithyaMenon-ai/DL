@@ -1,0 +1,10 @@
+AIM: Use LSTM/GRU to predict stock prices.
+
+ALGORITHM:
+1. Collect and preprocess stock data.
+2. Define LSTM/GRU model.
+3. Train using past prices.
+4. Predict future stock prices.
+
+OUTPUT:
+Test MSE: 0.002

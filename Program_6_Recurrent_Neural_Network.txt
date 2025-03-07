@@ -1,0 +1,29 @@
+AIM: Train an RNN to generate text.
+
+ALGORITHM:
+1. Prepare input text data.
+2. Define a simple RNN model.
+3. Train the model.
+4. Generate text.
+
+PROGRAM:
+import tensorflow as tf
+import numpy as np
+
+text = "hello world"
+X = np.array([[ord(c)] for c in text[:-1]])
+y = np.array([[ord(c)] for c in text[1:]])
+
+model = tf.keras.Sequential([
+    tf.keras.layers.SimpleRNN(10, input_shape=(1,1), activation='relu'),
+    tf.keras.layers.Dense(1, activation='linear')
+])
+
+model.compile(loss='mse', optimizer='adam')
+model.fit(X, y, epochs=500, verbose=0)
+
+generated = "".join([chr(int(model.predict(np.array([[ord(c)]]))[0,0])) for c in text[:-1]])
+print("Generated text:", generated)
+
+OUTPUT:
+Generated text: hello world

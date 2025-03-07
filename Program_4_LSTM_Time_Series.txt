@@ -1,0 +1,14 @@
+import tensorflow as tf
+import numpy as np
+
+X = np.sin(np.linspace(0, 10, 100)).reshape(-1, 1, 1)
+y = np.roll(X, -1)
+
+model = tf.keras.Sequential([
+    tf.keras.layers.LSTM(10, return_sequences=True),
+    tf.keras.layers.Dense(1)
+])
+
+model.compile(optimizer="adam", loss="mse")
+model.fit(X, y, epochs=20, verbose=0)
+print("Loss:", model.evaluate(X, y, verbose=0))

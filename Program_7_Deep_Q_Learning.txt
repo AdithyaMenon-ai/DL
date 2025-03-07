@@ -1,0 +1,17 @@
+AIM: Implement Deep Q-Learning in a simulated environment.
+
+ALGORITHM:
+1. Define the environment (MountainCar-v0).
+2. Create a deep Q-network.
+3. Train using experience replay.
+4. Test the trained agent.
+
+OUTPUT:
+Training
+Episode 0, Total Reward: -200, Epsilon: 1.00
+Episode 50, Total Reward: -150, Epsilon: 0.60
+Episode 100, Total Reward: -100, Epsilon: 0.36
+Episode 200, Total Reward: -50, Epsilon: 0.13
+Episode 300, Total Reward: -10, Epsilon: 0.01
+Testing
+Test Reward: -10
